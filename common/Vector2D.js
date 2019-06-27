@@ -9,7 +9,6 @@ export default class Vector2D {
         this.y = y;
     }
 
-
     add(v){
         this.x += v.x;
         this.y += v.y;
@@ -19,7 +18,12 @@ export default class Vector2D {
         this.x *= scalar;
         this.y *= scalar;
     }
-
+    distanceTo(p){
+        return Math.sqrt( Math.pow((this.x-p.x), 2) + Math.pow((this.y-p.y), 2) );
+    }
+    clone(){
+        return new Vector2D(this.x,this.y);
+    }
     get x()
     {
         return this._x;
@@ -63,7 +67,7 @@ export default class Vector2D {
 
     set length(length )
     {
-        this._length = this.length;
+        this._length = length;
         this._x = Math.cos(this._angle) * this._length;
         this._y = Math.sin(this._angle) * this._length;
     }
