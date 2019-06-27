@@ -1,0 +1,22 @@
+{
+  "name": "workshop-ui-animation",
+  "version": "1.0.0",
+  "description": "Ficheros para el curso de UI Animation",
+  "main": "index.js",
+  "scripts": {
+    "start": "browser-sync start --server --files \"**/*\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vodafone-ES/workshop-ui-animation.git"
+  },
+  "author": "Joseba Alonso <7daysofrain@gmail.com> (http://www.refr3sh.es)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Vodafone-ES/workshop-ui-animation/issues"
+  },
+  "homepage": "https://github.com/Vodafone-ES/workshop-ui-animation#readme",
+  "dependencies": {
+    "browser-sync": "^2.26.7"
+  }
+}
