@@ -9,7 +9,7 @@ function render(){
     console.log(position);
 }
 function frame(){
-position.add(vel)
+    position.add(vel)
     checkLimitsAndRespawn();
     render();
     requestAnimationFrame(frame);

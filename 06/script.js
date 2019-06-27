@@ -48,7 +48,7 @@ function render(){
 
 function frame(){
     if(moving){
-    position.add(vel)
+        position.add(vel)
     }
     vel.multiply(0.95)
     checkLimitsAndBounce();

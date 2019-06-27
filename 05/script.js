@@ -17,7 +17,7 @@ acc.length = 0.05;
 vel.length = 20;
 
 function frame(){
-position.add(vel)
+    position.add(vel)
     vel.length = Math.max(0, vel.length - acc.length);
     checkLimitsAndBounce();
     render();
