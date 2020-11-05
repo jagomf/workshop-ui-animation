@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>anim</title>
+	<link href="css/ws10.css" rel="stylesheet"/>
+	<style>
+		.playground{
+			display: flex;
+			height: 100vh;
+			justify-content: space-around;
+			align-items: center;
+		}
+		.transitioned{
+			transition: background-color 1s linear;
+		}
+		.transitioned2{
+			transition: border-radius 1s linear;
+		}
+		.transitioned2:hover{
+			border-radius: 20px;
+		}
+	</style>
+</head>
+<body>
+<div data-ws10-spritesheet="img/svg/sprite.mva10.svg" data-ws10-js="spritesheet-loader"></div>
+<div data-ws10-spritesheet="img/svg/sprite.mid.svg" data-ws10-js="spritesheet-loader"></div>
+
+<div class="playground">
+	<button type="button" name="cta" title="CTA" class="ws10-c-button transitioned">
+		Transition 1
+	</button>
+	<button type="button" name="cta" title="CTA" class="ws10-c-button transitioned2">
+		Transition 2
+	</button>
+</div>
+<script src="js/ws10.js"></script>
+
+</body>
+</html>
