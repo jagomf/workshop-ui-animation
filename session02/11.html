@@ -12,15 +12,23 @@
 			justify-content: space-around;
 			align-items: center;
 		}
-		.transitioned{
-			transition: background-color 1s linear;
+		:root {
+			--base-time: 1s;
+			--time-scale: 1;
+			--animated-time: calc(var(--base-time) * var(--time-scale));
 		}
-		.transitioned2{
-			transition: border-radius 1s linear;
+		.card{
+			width: 80%;
+			overflow: hidden;
 		}
-		.transitioned2:hover{
-			border-radius: 20px;
+		.animated{
+			transition: transform var(--animated-time) linear ;
+			transform: translateX(150px);
 		}
+		.hide {
+			transform: translateX(-150px);
+		}
+
 	</style>
 </head>
 <body>
@@ -28,14 +36,15 @@
 <div data-ws10-spritesheet="img/svg/sprite.mid.svg" data-ws10-js="spritesheet-loader"></div>
 
 <div class="playground">
-	<button type="button" name="cta" title="CTA" class="ws10-c-button transitioned">
-		Transition 1
-	</button>
-	<button type="button" name="cta" title="CTA" class="ws10-c-button transitioned2">
-		Transition 2
-	</button>
+	<div class="ws10-c-card card" data-responsive="20">
+		<button type="button" id="boton" title="CTA" class="ws10-c-button animated">
+			Animation
+		</button>
+	</div>
 </div>
 <script src="js/ws10.js"></script>
-
+<script>
+	document.documentElement.addEventListener('click',() => document.querySelector('#boton').classList.add('hide'));
+</script>
 </body>
 </html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>anim</title>
+	<link href="css/ws10.css" rel="stylesheet"/>
+	<style>
+		.overlay{
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			height: 100vh;
+			width: 100vw;
+			position: absolute;
+			left: 0;
+			top: 0;
+			background-color: rgba(0,0,0,0.6);
+		}
+		.overlay-card{
+			width: 80%;
+			min-height: 400px;
+		}
+		:root {
+			--base-time: 1s;
+			--time-scale: 1;
+			--animated-time: calc(var(--base-time) * var(--time-scale));
+		}
+		.animated{
+		}
+		.animated:hover{
+			animation: anim1 var(--animated-time) linear;
+			animation-fill-mode: forwards;
+		}
+		@keyframes anim1 {
+			0%{
+				background-color: #e90000;
+				width: 200px;
+			}
+			50%{
+				color: #5e2750;
+			}
+			100%{
+				background-color: #900;
+				width: 300px;
+			}
+		}
+	</style>
+</head>
+<body>
+<div data-ws10-spritesheet="img/svg/sprite.mva10.svg" data-ws10-js="spritesheet-loader"></div>
+<div data-ws10-spritesheet="img/svg/sprite.mid.svg" data-ws10-js="spritesheet-loader"></div>
+
+<div class="overlay">
+	<div class="ws10-c-card overlay-card" data-responsive="20">
+		Lorem Ipsum
+	</div>
+</div>
+<script src="js/ws10.js"></script>
+
+</body>
+</html>

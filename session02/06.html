@@ -12,14 +12,30 @@
 			justify-content: space-around;
 			align-items: center;
 		}
-		.transitioned{
-			transition: background-color 1s linear;
+		:root {
+			--base-time: 1s;
+			--time-scale: 1;
+			--animated-time: calc(var(--base-time) * var(--time-scale));
 		}
-		.transitioned2{
-			transition: border-radius 1s linear;
+		.animated{
+			animation: anim1 var(--animated-time) linear;
+			animation-play-state: paused;
 		}
-		.transitioned2:hover{
-			border-radius: 20px;
+		.animated:hover{
+			animation-play-state: running;
+		}
+		@keyframes anim1 {
+			0%{
+				background-color: #e90000;
+				width: 200px;
+			}
+			50%{
+				color: #5e2750;
+			}
+			100%{
+				background-color: #900;
+				width: 300px;
+			}
 		}
 	</style>
 </head>
@@ -28,11 +44,8 @@
 <div data-ws10-spritesheet="img/svg/sprite.mid.svg" data-ws10-js="spritesheet-loader"></div>
 
 <div class="playground">
-	<button type="button" name="cta" title="CTA" class="ws10-c-button transitioned">
-		Transition 1
-	</button>
-	<button type="button" name="cta" title="CTA" class="ws10-c-button transitioned2">
-		Transition 2
+	<button type="button" name="cta" title="CTA" class="ws10-c-button animated">
+		Animation
 	</button>
 </div>
 <script src="js/ws10.js"></script>

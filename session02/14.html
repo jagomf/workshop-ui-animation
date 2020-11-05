@@ -1,0 +1,27 @@
+
+	<style>
+		.playground{
+			display: flex;
+			height: 100vh;
+			justify-content: space-around;
+			align-items: center;
+		}
+		:root {
+			--base-time: 1s;
+			--time-scale: 1;
+			--animated-time: calc(var(--base-time) * var(--time-scale));
+		}
+		.sprite {
+			width: 100px;
+			height: 100px;
+			background: url(sprite/spritesheet.png) no-repeat 0 0;
+			transition: background-position var(--animated-time) steps(44);
+		}
+		.sprite:hover{
+			background-position: calc(-100px*44) 0;
+		}
+	</style>
+
+	<div class="playground">
+		<div class="sprite"></div>
+	</div>

@@ -12,14 +12,24 @@
 			justify-content: space-around;
 			align-items: center;
 		}
+		:root {
+			--base-time: 1s;
+			--time-scale: 1;
+			--transitioned-time: calc(var(--base-time) * var(--time-scale));
+		}
 		.transitioned{
-			transition: background-color 1s linear;
+			transition: border-radius var(--transitioned-time) linear;
+		}
+		.transitioned:hover{
+			border-radius: 20px;
 		}
 		.transitioned2{
-			transition: border-radius 1s linear;
+			transition: border-radius var(--transitioned-time) linear,
+						background-color calc(var(--transitioned-time)/3) linear;
 		}
 		.transitioned2:hover{
 			border-radius: 20px;
+			background-color: #5e2750;
 		}
 	</style>
 </head>
